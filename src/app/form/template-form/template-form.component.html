@@ -1,0 +1,16 @@
+<p>
+  template-form works!
+</p>
+  <form #userForm="ngForm" (ngSubmit)="doSubmission(userForm.value)">
+    <input type="text" name ="firstName" placeholder="First Name..." ngModel>
+    <input type="text" name ="lastName" placeholder="Last Name..." ngModel>
+    <select name="hobby" ngModel>
+      <option value="dancing">Dancing</option>
+      <option value="driving" selected>Driving</option>
+      <option value="programming">Progamming</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+

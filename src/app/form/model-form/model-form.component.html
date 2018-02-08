@@ -1,0 +1,16 @@
+<p>
+  model-form works!
+</p>
+
+
+<form [formGroup]="myForm" (ngSubmit)="doSubmission(myForm.value)">
+  <input type="text" name ="firstName" placeholder="First Name..." formControlName="fName">
+  <input type="text" name ="lastName" placeholder="Last Name..." formControlName="lName">
+  <select name="hobby" formControlName="hobby">
+    <option value="dancing">Dancing</option>
+    <option value="driving" selected>Driving</option>
+    <option value="programming">Progamming</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit" [disabled]='!myForm.valid' >
+</form>
