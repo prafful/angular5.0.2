@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule} from '@angular/forms'
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { ConsumeService1Component } from './consume-service1/consume-service1.co
 import { UserServiceService } from './service/user-service.service';
 import { ConsumeService2Component } from './consume-service2/consume-service2.component';
 import { HttpServiceComponent } from './http/http-service/http-service.component';
+import { SearchFilterPipe } from './search/search-filter.pipe';
+import { AnimationComponent } from './animation/animation.component';
 
 
 
@@ -29,13 +32,16 @@ import { HttpServiceComponent } from './http/http-service/http-service.component
     ModelFormComponent,
     ConsumeService1Component,
     ConsumeService2Component,
-    HttpServiceComponent
+    HttpServiceComponent,
+    SearchFilterPipe,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
         path:'mycatalog',
@@ -65,7 +71,11 @@ import { HttpServiceComponent } from './http/http-service/http-service.component
       {
         path:'http-service',
         component:HttpServiceComponent
+      },{
+        path:'animate',
+        component:AnimationComponent
       }
+
     ])
   ],
   providers: [UserServiceService],

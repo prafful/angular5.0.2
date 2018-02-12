@@ -1,9 +1,9 @@
 <p>
   http-service works!
 </p>
-
+Search by name:<input type="text" name="name" [(ngModel)]="searchName" >
 <ul>
-  <li *ngFor="let u of user">
-   {{ u.id }}, {{u.name}}, {{u.email}}
+  <li *ngFor="let u of user | searchFilter:searchName">
+   {{ u.id }}, {{u.userId}}, {{u.title}}
   </li>
 </ul>

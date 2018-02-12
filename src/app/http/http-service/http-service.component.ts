@@ -17,11 +17,11 @@ export class HttpServiceComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getRemoteData();
+    this.getRemoteDataNow();
 
   }
 
-  getRemoteData(){
+  getRemoteDataNow(){
     this.observableUserInfo = this.httpService.getRemoteData();
     this.observableUserInfo.subscribe(
       user => this.user = user
