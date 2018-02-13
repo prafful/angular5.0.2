@@ -5,6 +5,8 @@ import { FormsModule} from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +21,10 @@ import { ConsumeService2Component } from './consume-service2/consume-service2.co
 import { HttpServiceComponent } from './http/http-service/http-service.component';
 import { SearchFilterPipe } from './search/search-filter.pipe';
 import { AnimationComponent } from './animation/animation.component';
+import { SortPipePipe } from './sort/sort-pipe.pipe';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { HttpClientComponent } from './http-client/http-client.component';
+import { HttpClientServiceService } from './http-client-service.service'
 
 
 
@@ -34,9 +40,14 @@ import { AnimationComponent } from './animation/animation.component';
     ConsumeService2Component,
     HttpServiceComponent,
     SearchFilterPipe,
-    AnimationComponent
+    AnimationComponent,
+    SortPipePipe,
+    BootstrapComponent,
+    HttpClientComponent
   ],
   imports: [
+    HttpClientModule,
+    NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -71,14 +82,23 @@ import { AnimationComponent } from './animation/animation.component';
       {
         path:'http-service',
         component:HttpServiceComponent
-      },{
+      },
+      {
         path:'animate',
         component:AnimationComponent
+      },
+      {
+        path:'bootstrap',
+        component:BootstrapComponent
+      },
+      {
+        path:'httpclient',
+        component:HttpClientComponent
       }
 
     ])
   ],
-  providers: [UserServiceService],
+  providers: [UserServiceService, HttpClientServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

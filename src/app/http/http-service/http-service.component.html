@@ -3,7 +3,7 @@
 </p>
 Search by name:<input type="text" name="name" [(ngModel)]="searchName" >
 <ul>
-  <li *ngFor="let u of user | searchFilter:searchName">
-   {{ u.id }}, {{u.userId}}, {{u.title}}
+  <li *ngFor="let u of user | searchFilter:searchName | sortPipe:'dsc'">
+   {{ u.id }}, {{u.name}}, {{u.email | uppercase}}
   </li>
 </ul>

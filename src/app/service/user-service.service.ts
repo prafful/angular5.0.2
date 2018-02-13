@@ -17,7 +17,7 @@ export class UserServiceService {
 
   getRemoteData():Observable<UserInfo[]>{
     return this.httpService.get(
-      "https://jsonplaceholder.typicode.com/todos"
+      "https://jsonplaceholder.typicode.com/users"
     ).map(response => response.json() as UserInfo[])
 
   }
