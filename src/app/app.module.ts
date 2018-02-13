@@ -24,7 +24,9 @@ import { AnimationComponent } from './animation/animation.component';
 import { SortPipePipe } from './sort/sort-pipe.pipe';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { HttpClientComponent } from './http-client/http-client.component';
-import { HttpClientServiceService } from './http-client-service.service'
+import { HttpClientServiceService } from './http-client-service.service';
+import { Parent1Component } from './parent-child/parent1/parent1.component';
+import { Child1Component } from './parent-child/child1/child1.component'
 
 
 
@@ -43,7 +45,9 @@ import { HttpClientServiceService } from './http-client-service.service'
     AnimationComponent,
     SortPipePipe,
     BootstrapComponent,
-    HttpClientComponent
+    HttpClientComponent,
+    Parent1Component,
+    Child1Component
   ],
   imports: [
     HttpClientModule,
@@ -94,6 +98,10 @@ import { HttpClientServiceService } from './http-client-service.service'
       {
         path:'httpclient',
         component:HttpClientComponent
+      },
+      {
+        path:'parentchild',
+        component:Parent1Component
       }
 
     ])

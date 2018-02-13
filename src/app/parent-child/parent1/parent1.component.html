@@ -1,0 +1,5 @@
+<br><br>
+  <b> parent1 works!</b> I am <b>{{ myName }}</b>. Pl. say hello to my child below....
+
+<br><hr>
+<app-child1 [myName]="myName" (sendMyNameToParent)="receivedNameFromChild($event)"></app-child1>
