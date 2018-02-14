@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule} from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -26,9 +26,66 @@ import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { HttpClientComponent } from './http-client/http-client.component';
 import { HttpClientServiceService } from './http-client-service.service';
 import { Parent1Component } from './parent-child/parent1/parent1.component';
-import { Child1Component } from './parent-child/child1/child1.component'
+import { Child1Component } from './parent-child/child1/child1.component';
+import { TaskComponent } from './project/task/task.component';
+import { SupertaskComponent } from './project/supertask/supertask.component'
 
 
+const myRoutes: Routes =[ 
+          {
+          path:'mycatalog',
+          component:CatalogComponent
+        },
+        {
+          path:'myproducts',
+          component:ProductsComponent
+
+        },
+        {
+          path:'template-form',
+          component:TemplateFormComponent
+        },
+        {
+          path:'model-form',
+          component:ModelFormComponent
+        },
+        {
+          path:'service1',
+          component:ConsumeService1Component
+        },
+        {
+          path:'service2',
+          component:ConsumeService2Component
+        },
+        {
+          path:'http-service',
+          component:HttpServiceComponent
+        },
+        {
+          path:'animate',
+          component:AnimationComponent
+        },
+        {
+          path:'bootstrap',
+          component:BootstrapComponent
+        },
+        {
+          path:'httpclient',
+          component:HttpClientComponent
+        },
+        {
+          path:'parentchild',
+          component:Parent1Component
+        },
+        {
+          path:'task',
+          component:TaskComponent
+        },
+        {
+          path:'supertask',
+          component:SupertaskComponent
+        }
+      ];
 
 @NgModule(
   {
@@ -47,7 +104,9 @@ import { Child1Component } from './parent-child/child1/child1.component'
     BootstrapComponent,
     HttpClientComponent,
     Parent1Component,
-    Child1Component
+    Child1Component,
+    TaskComponent,
+    SupertaskComponent
   ],
   imports: [
     HttpClientModule,
@@ -57,54 +116,7 @@ import { Child1Component } from './parent-child/child1/child1.component'
     ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      {
-        path:'mycatalog',
-        component:CatalogComponent
-      },
-      {
-        path:'myproducts',
-        component:ProductsComponent
-
-      },
-      {
-        path:'template-form',
-        component:TemplateFormComponent
-      },
-      {
-        path:'model-form',
-        component:ModelFormComponent
-      },
-      {
-        path:'service1',
-        component:ConsumeService1Component
-      },
-      {
-        path:'service2',
-        component:ConsumeService2Component
-      },
-      {
-        path:'http-service',
-        component:HttpServiceComponent
-      },
-      {
-        path:'animate',
-        component:AnimationComponent
-      },
-      {
-        path:'bootstrap',
-        component:BootstrapComponent
-      },
-      {
-        path:'httpclient',
-        component:HttpClientComponent
-      },
-      {
-        path:'parentchild',
-        component:Parent1Component
-      }
-
-    ])
+    RouterModule.forRoot(myRoutes)
   ],
   providers: [UserServiceService, HttpClientServiceService],
   bootstrap: [AppComponent]

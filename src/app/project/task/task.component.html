@@ -1,0 +1,18 @@
+<p>
+  task works!
+</p>
+
+<h1>Task Manager</h1>
+
+<div class="">
+   <input type="text" name="" id="" placeholder="Add Task" [(ngModel)]="myTask">
+   <button type="submit" (click)="addTask()">Add Task</button>
+</div>
+
+<ul>
+  <li *ngFor="let t of tasks; let counter = index" (click)="removeTask(counter)">
+   <b>{{ counter }}.</b>   {{t}}
+  </li>
+</ul>
+
+
