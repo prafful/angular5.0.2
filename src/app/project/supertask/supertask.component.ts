@@ -43,4 +43,9 @@ export class SupertaskComponent implements OnInit {
     console.log(this.taskInformations)
   }
 
+  deleteTask = function(counter){
+    console.log("deleting the task")
+    this.taskInformations.splice(counter, 1);
+  }
+
 }

@@ -46,7 +46,7 @@
 
     <!--show task -->
 
-    <tr *ngFor="let task of taskInformations">
+    <tr *ngFor="let task of taskInformations; let counter = index">
         <td>
             <div class="form-group">
               <input type="text" name="task" id="" [(ngModel)]="task.task" class="form-control" disabled>
@@ -74,7 +74,7 @@
         </td>
         <td>
             <div class="form-group">
-              <button class="btn btn-danger" (click)="deleteTask()"> Delete Task</button>
+              <button class="btn btn-danger" (click)="deleteTask(counter)"> Delete Task</button>
             </div>
         </td>
       </tr>
